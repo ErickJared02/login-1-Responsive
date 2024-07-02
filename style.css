@@ -1,0 +1,53 @@
+*{box-sizing: border-box;}
+
+@keyframes rotate{
+    100%{
+        background-position: 15% 50%;
+    }
+}
+
+:root{
+    --color-primary: #7656f0
+}
+
+body{
+    display: grid;
+    place-items: center; /*se centran tyodos los componetes*/
+    margin: 0;
+    height: 100vh; /*separacion de arriba  100*/
+    padding: 0 24px;
+    background-color: var(--color-primary); /*color de fondo*/
+    background-image: url(/img/fondo.svg); /*imagen de fondo*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f9f9f9;   /*color de letra de "Login", "Enter your credentials"*/
+    animation: rotate 6s infinite alternate linear;
+}
+
+body::after{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 35%); /*se crea una tipo sombra */
+}
+
+.login-card{
+    position: relative;
+    z-index: 1; /*le quita la sombra negra*/
+    width: 100%;  /*lo mueve a la izquierda */
+    margin: 0 20px;
+    padding: 70px 30px 44px;
+    border-radius: 20px;
+    background: rgb(24 21 6 /66%); /*crea un cuadro negro*/
+    backdrop-filter: blur(10px);
+    text-align: center;  /*se centra en medio del cuadro negro*/
+}
+
+.login-card > h2 {
+    font-size: 36px;  /*tama del texto "Login" */
+    font-weight: 400; /*grsor de letra*/
+    margin: 0 0 12px;
+}
+
+
+
